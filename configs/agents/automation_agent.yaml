@@ -1,0 +1,24 @@
+id: automation_agent
+name: Automation Agent
+version: 1.0.0
+description: "Automates repetitive workflows, API calls, and system tasks."
+module: "app.agents.built_in.automation_agent"
+class: "AutomationAgent"
+capabilities:
+  - task_automation
+  - api_integration
+  - scheduling
+tools:
+  - http_client
+  - file_system
+  - email_sender
+model: "gpt-4"
+temperature: 0.4
+max_tokens: 3000
+timeout_seconds: 120
+retry_limit: 5
+retry_delay_seconds: 2
+enabled: true
+metadata:
+  category: "automation"
+  priority: "low"

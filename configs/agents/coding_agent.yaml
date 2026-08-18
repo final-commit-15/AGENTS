@@ -1,0 +1,23 @@
+id: coding_agent
+name: Coding Agent
+version: 1.0.0
+description: "Generates, reviews, and refines code based on requirements."
+module: "app.agents.built_in.coding_agent"
+class: "CodingAgent"
+capabilities:
+  - code_generation
+  - code_review
+  - refactoring
+tools:
+  - code_executor
+  - static_analyzer
+model: "gpt-4"
+temperature: 0.2
+max_tokens: 8000
+timeout_seconds: 300
+retry_limit: 2
+retry_delay_seconds: 3
+enabled: true
+metadata:
+  category: "development"
+  priority: "medium"
