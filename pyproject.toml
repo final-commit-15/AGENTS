@@ -19,6 +19,8 @@ dependencies = [
     "opentelemetry-api>=1.0.0",
     "opentelemetry-sdk>=1.0.0",
     "python-dotenv>=1.0.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
 ]
 
 [project.optional-dependencies]

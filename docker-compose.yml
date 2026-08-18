@@ -2,7 +2,7 @@ services:
   agents:
     build: .
     ports:
-      - "8000:8000"  # if we expose an API
+      - "8001:8000"
     environment:
       - ENVIRONMENT=development
       - LOG_LEVEL=DEBUG
@@ -10,4 +10,12 @@ services:
     volumes:
       - ./configs:/app/configs
       - ./app:/app/app
+    networks:
+      agentforge-network:
+        aliases:
+          - agentforge-agents
     restart: unless-stopped
+
+networks:
+  agentforge-network:
+    external: true
