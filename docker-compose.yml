@@ -3,10 +3,11 @@ services:
     build: .
     ports:
       - "8001:8000"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
     environment:
       - ENVIRONMENT=development
       - LOG_LEVEL=DEBUG
-      - AI_SERVICES_URL=http://ai-services:8080
+      - AI_SERVICES_URL=http://ai-services:8000
     volumes:
       - ./configs:/app/configs
       - ./app:/app/app
