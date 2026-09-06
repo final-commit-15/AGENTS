@@ -1,0 +1,33 @@
+# Tool catalogue and defaults for the ToolRegistry.
+
+enabled:
+  - filesystem
+  - terminal
+  - python_runner
+  - git
+  - docker
+  - github
+  - sql
+  - browser
+  - search
+  - http
+  - calendar
+  - email
+  - slack
+  - notion
+  - pdf
+  - image
+  - audio
+  - vector_db
+
+defaults:
+  timeout_seconds: 30
+  sandbox: false
+
+service_credentials:
+  github: GITHUB_TOKEN
+  slack: SLACK_BOT_TOKEN
+  notion: NOTION_API_TOKEN
+  notion_version: "2022-06-28"
+  email_smtp: AGENTFORGE_SMTP_HOST
+  calendar: GOOGLE_APPLICATION_CREDENTIALS

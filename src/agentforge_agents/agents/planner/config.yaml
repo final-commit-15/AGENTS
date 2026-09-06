@@ -1,0 +1,25 @@
+id: planner
+name: Planner Agent
+description: Decomposes user requests into dependency-aware, parallelizable execution plans.
+version: 1.0.0
+agent_class: agentforge_agents.agents.planner.agent.Agent
+enabled: true
+max_iterations: 5
+timeout_seconds: 60.0
+max_retries: 1
+tools:
+  - search
+  - http
+model:
+  provider: openai
+  name: gpt-4o-mini
+  temperature: 0.2
+  max_tokens: 2048
+memory:
+  enabled: true
+  namespace: planner
+  ttl_seconds: 86400
+  session_isolation: true
+  embeddable: false
+metadata:
+  category: core

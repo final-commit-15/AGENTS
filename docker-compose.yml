@@ -1,22 +1,36 @@
 services:
-  agents:
-    build: .
+  redis:
+    image: redis:7-alpine
     ports:
-      - "8001:8000"
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
-    environment:
-      - ENVIRONMENT=development
-      - LOG_LEVEL=DEBUG
-      - AI_SERVICES_URL=http://ai-services:8000
+      - "6379:6379"
     volumes:
-      - ./configs:/app/configs
-      - ./app:/app/app
-    networks:
-      agentforge-network:
-        aliases:
-          - agentforge-agents
-    restart: unless-stopped
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
 
-networks:
-  agentforge-network:
-    external: true
+  agents:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.prod
+    ports:
+      - "8000:8000"
+    environment:
+      - AGENTFORGE_EVENT_BUS=redis
+      - AGENTFORGE_REDIS_URL=redis://redis:6379/0
+      - AGENTFORGE_REDIS_PREFIX=agentforge_agents
+      - AGENTFORGE_MEMORY_BACKEND=redis
+      - AGENTFORGE_MOCK_LLM=1
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/health/live', timeout=2)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  redis_data:

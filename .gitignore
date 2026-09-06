@@ -1,25 +1,54 @@
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*.so
+*$py.class
+
+# Distribution / packaging
 .Python
-env/
-venv/
-.venv/
-dist/
 build/
+dist/
 *.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test / coverage / artifacts
 .pytest_cache/
 .coverage
+.coverage.*
 htmlcov/
 .mypy_cache/
-*.log
+.ruff_cache/
+.benchmarks/
+hypothesis/
 
-# Env
-.env
-*.env.local
-
-# IDE
-.vscode/
+# Editors / OS
 .idea/
+.vscode/
 *.swp
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+data/
+runtime/
+*.sqlite3
+*.db
+
+# Docker
+agents-data/

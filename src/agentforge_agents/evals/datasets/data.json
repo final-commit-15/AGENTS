@@ -1,0 +1,25 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "samples": [
+    {
+      "id": "data-001",
+      "task": "Recommend a cleaning strategy for a list of customer records.",
+      "expected": "analysis",
+      "input": {"operation": "clean"},
+      "tags": ["cleaning"]
+    },
+    {
+      "id": "data-002",
+      "task": "Analyze a sales dataset to find monthly trends.",
+      "expected": "analysis",
+      "tags": ["analysis"]
+    },
+    {
+      "id": "data-003",
+      "task": "Explain how to use an index to speed up a SQL join.",
+      "expected": "explain",
+      "tags": ["sql"]
+    }
+  ]
+}

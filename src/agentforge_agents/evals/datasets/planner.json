@@ -1,0 +1,30 @@
+{
+  "name": "planner",
+  "version": "1.0.0",
+  "samples": [
+    {
+      "id": "plan-001",
+      "task": "Create a plan to deploy a web application: write the backend, build the frontend, then run tests.",
+      "expected": "backend",
+      "tags": ["planning"]
+    },
+    {
+      "id": "plan-002",
+      "task": "Draft an email campaign and send it to subscribers.",
+      "expected": "communication",
+      "tags": ["planning"]
+    },
+    {
+      "id": "plan-003",
+      "task": "Research competitor pricing, summarize findings, and store the report in memory.",
+      "expected": "research",
+      "tags": ["planning"]
+    },
+    {
+      "id": "plan-004",
+      "task": "Automate the daily CSV data cleaning job.",
+      "expected": "data",
+      "tags": ["planning"]
+    }
+  ]
+}

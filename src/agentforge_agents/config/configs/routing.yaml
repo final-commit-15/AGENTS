@@ -1,0 +1,27 @@
+# Task routing configuration.
+
+default_agent: planner
+
+rules:
+  - agent_id: planner
+    keywords: [plan, organize, break down, strategy, decompose, roadmap]
+  - agent_id: coding
+    keywords: [code, python, typescript, javascript, bug, refactor, function, api, software, bash, sql, docker, git]
+  - agent_id: research
+    keywords: [research, search, compare sources, citations, investigate, find out]
+  - agent_id: data
+    keywords: [data analysis, pandas, dataset, statistics, csv, excel data, cleaning]
+  - agent_id: document
+    keywords: [pdf, docx, memo, report, write document, pptx, spreadsheet]
+  - agent_id: automation
+    keywords: [automate, schedule, integration, recurring, sync]
+  - agent_id: communication
+    keywords: [email, slack message, notification, meeting summary, teams message]
+  - agent_id: memory
+    keywords: [remember, recall, memorize, forget, retrieve memory]
+  - agent_id: browser
+    keywords: [website, web page, fill form, screenshot, browse]
+
+fallbacks:
+  unknown_request: planner
+  no_pooled_agent: planner

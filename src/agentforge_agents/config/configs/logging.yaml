@@ -1,0 +1,18 @@
+# Logging configuration (structlog processors and levels).
+
+level: INFO
+json: false
+output: stdout
+timestamps: iso-utc
+
+processors:
+  - add_log_level
+  - TimeStamper
+  - add_logger_name
+  - format_exc_info
+
+# Set specific loggers to different levels.
+overrides:
+  uvicorn: WARNING
+  httpx: WARNING
+  openai: WARNING

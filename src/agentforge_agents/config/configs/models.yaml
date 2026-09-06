@@ -1,0 +1,29 @@
+# Model catalogue used by agents and the LLM factory.
+
+default: openai/gpt-4o-mini
+
+models:
+  - provider: openai
+    name: gpt-4o-mini
+    best_for: [planner, communication, coding, research]
+    temperature: 0.2
+    max_tokens: 4096
+  - provider: openai
+    name: gpt-4o
+    best_for: [coding, data]
+    temperature: 0.1
+    max_tokens: 8192
+  - provider: ollama
+    name: llama3.1
+    best_for: [document, browser, workflow]
+    temperature: 0.3
+    max_tokens: 4096
+  - provider: mock
+    name: mock
+    best_for: [tests, evals]
+    temperature: 0.0
+    max_tokens: 1024
+
+timeouts:
+  default_seconds: 60
+  long_running_seconds: 300

@@ -1,0 +1,25 @@
+id: memory
+name: Memory Agent
+description: Stores and recalls knowledge with semantic retrieval.
+version: 1.0.0
+agent_class: agentforge_agents.agents.memory.agent.Agent
+enabled: true
+max_iterations: 5
+timeout_seconds: 90.0
+max_retries: 1
+tools:
+  - vector_db
+  - filesystem
+model:
+  provider: openai
+  name: gpt-4o-mini
+  temperature: 0.2
+  max_tokens: 2048
+memory:
+  enabled: true
+  namespace: memory
+  ttl_seconds: 86400
+  session_isolation: true
+  embeddable: true
+metadata:
+  category: core

@@ -1,0 +1,54 @@
+# Tool permission policy.
+# Resolution order: agent-scoped deny -> global deny -> agent-scoped allow ->
+# global allow -> default_mode.
+
+version: 1.0.0
+audit: true
+
+default_mode: allow   # allow | deny
+
+# Global allowlist; null/empty means everything allowed under default_mode.
+global_allowed: []
+
+global_denied: []
+
+# Optional agent-scoped overrides.
+agents:
+  coding:
+    allowed: [filesystem, terminal, python_runner, git, docker, sql, github, search, http]
+    denied: [slack, notion, calendar]
+  research:
+    allowed: [search, http, filesystem, vector_db]
+    denied: [terminal, docker]
+  data:
+    allowed: [sql, python_runner, filesystem, vector_db, http]
+    denied: []
+  automation:
+    allowed: [slack, notion, calendar, email, github, http, filesystem]
+    denied: [terminal, docker]
+  browser:
+    allowed: [browser, http, search]
+    denied: [terminal, docker]
+  document:
+    allowed: [filesystem, pdf, image, audio, http]
+    denied: []
+  memory:
+    allowed: [vector_db, filesystem, http]
+    denied: []
+  workflow:
+    allowed: [filesystem, http, terminal, python_runner]
+    denied: []
+  communication:
+    allowed: [email, slack, http, filesystem]
+    denied: [docker, terminal]
+  planner:
+    allowed: [search, http]
+    denied: []
+
+user_denied:
+  - docker
+
+require_confirmation_for:
+  - email
+  - notion
+  - calendar

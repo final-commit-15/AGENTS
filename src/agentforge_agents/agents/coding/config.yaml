@@ -1,0 +1,30 @@
+id: coding
+name: Coding Agent
+description: Generates, refactors, explains, and fixes code across languages.
+version: 1.0.0
+agent_class: agentforge_agents.agents.coding.agent.Agent
+enabled: true
+max_iterations: 5
+timeout_seconds: 90.0
+max_retries: 1
+tools:
+  - filesystem
+  - terminal
+  - python_runner
+  - git
+  - docker
+  - sql
+  - github
+model:
+  provider: openai
+  name: gpt-4o-mini
+  temperature: 0.2
+  max_tokens: 2048
+memory:
+  enabled: true
+  namespace: coding
+  ttl_seconds: 86400
+  session_isolation: true
+  embeddable: true
+metadata:
+  category: engineering

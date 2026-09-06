@@ -1,0 +1,55 @@
+# Global agent catalogue for AgentForge.
+# Per-agent YAML files inside each agent package override/augment this file.
+# Registry keys reference agents by id.
+
+agents:
+  planner:
+    module: agentforge_agents.agents.planner.agent
+    class: Agent
+    enabled: true
+    description: Decomposes requests into dependency-aware execution plans.
+  coding:
+    module: agentforge_agents.agents.coding.agent
+    class: Agent
+    enabled: true
+    description: Generates, refactors, explains, and fixes code.
+  research:
+    module: agentforge_agents.agents.research.agent
+    class: Agent
+    enabled: true
+    description: Web research, citations, and multi-source summaries.
+  data:
+    module: agentforge_agents.agents.data.agent
+    class: Agent
+    enabled: true
+    description: SQL, pandas, cleaning, statistics, and visualization specs.
+  automation:
+    module: agentforge_agents.agents.automation.agent
+    class: Agent
+    enabled: true
+    description: Workflow automation, scheduling, and service integration.
+  browser:
+    module: agentforge_agents.agents.browser.agent
+    class: Agent
+    enabled: true
+    description: Web navigation, form filling, screenshots, and downloads.
+  document:
+    module: agentforge_agents.agents.document.agent
+    class: Agent
+    enabled: true
+    description: PDF, DOCX, PPT, Excel, and Markdown handling.
+  memory:
+    module: agentforge_agents.agents.memory.agent
+    class: Agent
+    enabled: true
+    description: Conversation, user, and project memory with embeddings.
+  workflow:
+    module: agentforge_agents.agents.workflow.agent
+    class: Agent
+    enabled: true
+    description: Executes pipelines, DAGs, retries, and checkpoints.
+  communication:
+    module: agentforge_agents.agents.communication.agent
+    class: Agent
+    enabled: true
+    description: Email, Slack, Teams, notifications, and meeting summaries.

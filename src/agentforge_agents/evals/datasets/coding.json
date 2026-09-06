@@ -1,0 +1,26 @@
+{
+  "name": "coding",
+  "version": "1.0.0",
+  "samples": [
+    {
+      "id": "code-001",
+      "task": "Generate a python function to compute the fibonacci sequence.",
+      "expected": "def fibonacci",
+      "input": {"language": "python"},
+      "tags": ["codegen"]
+    },
+    {
+      "id": "code-002",
+      "task": "Write a bash script to back up a directory.",
+      "expected": "bash",
+      "input": {"language": "bash"},
+      "tags": ["codegen"]
+    },
+    {
+      "id": "code-003",
+      "task": "Explain how async/await works in Python.",
+      "input": {"mode": "explain"},
+      "tags": ["explain"]
+    }
+  ]
+}

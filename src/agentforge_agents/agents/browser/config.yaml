@@ -1,0 +1,26 @@
+id: browser
+name: Browser Agent
+description: Navigates web pages, fills forms, takes screenshots, and downloads.
+version: 1.0.0
+agent_class: agentforge_agents.agents.browser.agent.Agent
+enabled: true
+max_iterations: 5
+timeout_seconds: 90.0
+max_retries: 1
+tools:
+  - browser
+  - http
+  - search
+model:
+  provider: openai
+  name: gpt-4o-mini
+  temperature: 0.2
+  max_tokens: 2048
+memory:
+  enabled: true
+  namespace: browser
+  ttl_seconds: 86400
+  session_isolation: true
+  embeddable: true
+metadata:
+  category: actions

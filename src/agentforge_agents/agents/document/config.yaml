@@ -1,0 +1,26 @@
+id: document
+name: Document Agent
+description: Reads and generates office documents, PDFs, and images.
+version: 1.0.0
+agent_class: agentforge_agents.agents.document.agent.Agent
+enabled: true
+max_iterations: 5
+timeout_seconds: 90.0
+max_retries: 1
+tools:
+  - pdf
+  - image
+  - filesystem
+model:
+  provider: openai
+  name: gpt-4o-mini
+  temperature: 0.2
+  max_tokens: 2048
+memory:
+  enabled: true
+  namespace: document
+  ttl_seconds: 86400
+  session_isolation: true
+  embeddable: true
+metadata:
+  category: knowledge
